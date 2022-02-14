@@ -13,3 +13,15 @@ make clean      # delete binaries/apps
 ```
 
 Note: target `macos-app` requires [`createapp`](https://github.com/y-mx-b/createapp).
+
+## TODO
+
+### Bugs
+
+- [ ] Fix visual bugs in app bundle (textures not rendered)
+
+### Niceties
+
+- [ ] Start menu
+- [ ] New game menu
+- [ ] Sound effects + music
