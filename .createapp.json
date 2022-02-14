@@ -1,0 +1,7 @@
+{
+  "bundleID": "com.y-mx-b.www",
+  "name": "Tic-Tac-Toe",
+  "executable": "./bin/Tic-Tac-Toe",
+  "icon": "./assets/Tic-Tac-Toe.icns",
+  "version": "0.0.1"
+}
