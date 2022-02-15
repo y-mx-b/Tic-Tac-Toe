@@ -6,6 +6,8 @@ CLIBDY = `pkg-config --libs --cflags raylib`
 CLIBSTAT = ./lib/libraylib.a
 BIN = ./bin/Tic-Tac-Toe
 
+TEST =
+
 # macOS specific
 MACOS_FRAMEWORKS = -framework CoreVideo -framework IOKit -framework Cocoa -framework GLUT -framework OpenGL
 APP_NAME = Tic-Tac-Toe
@@ -19,14 +21,18 @@ bin:
 Tic-Tac-Toe_macOS: bin
 				$(CC) $(MACOS_FRAMEWORKS) $(CLIBSTAT) $(CFILES) -o $(BIN)_macOS
 
-Tic-Tac-Toe.app: Tic-Tac-Toe_macOS
+Tic-Tac-Toe.app: bin
+				$(CC) $(MACOS_FRAMEWORKS) $(CLIBSTAT) $(CFILES) -o $(BIN)_macOS -DMACOS_APP=TRUE
 				mint run createapp -m json
+				cp assets/* Tic-Tac-Toe.app/Contents/Resources/
 
 
 # Platforms
 # macOS
 macos-app: Tic-Tac-Toe.app
 macos-bin: Tic-Tac-Toe_macOS
+macos-test: bin
+				$(CC) $(MACOS_FRAMEWORKS) $(CLIBSTAT) src/draw.c test/test-$(TEST).c -o $(BIN)_test_macOS
 
 clean:
 				rm -r ./bin Tic-Tac-Toe.app

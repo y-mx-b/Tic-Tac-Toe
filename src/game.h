@@ -3,11 +3,11 @@
 typedef struct {
 	int x;
 	int y;
-} Point;
+} IntPoint;
 
 Rectangle get_cell(int screen_width, int screen_height, Vector2 coord);
 
-Point get_coord(int screen_width, int screen_height);
+IntPoint get_coord(int screen_width, int screen_height);
 
 // void clear_board(int **board);
 
