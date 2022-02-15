@@ -23,5 +23,6 @@ Note: target `macos-app` requires [`createapp`](https://github.com/y-mx-b/create
 ### Niceties
 
 - [ ] Start menu
+- [ ] Custom drawn O/X's
 - [ ] New game menu
 - [ ] Sound effects + music
