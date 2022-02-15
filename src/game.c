@@ -56,15 +56,19 @@ int check_victory(int (*board)[3][3]) {
 
             row += (*board)[i][j];
             col += (*board)[j][i];
-            if (row == 3 || col == 3 || row == -3 || col == -3) {
-                return 1;
+            if (row == 3 || col == 3) {
+                return 1; // player 1 victory
+            }
+            if (row == -3 || col == -3) {
+                return 2; // player 2 victory
             }
         }
         row = col = 0;
         dia1 += (*board)[i][i];
         dia2 += (*board)[2 - i][i];
     }
-    if (dia1 == 3 || dia2 == 3 || dia1 == -3 || dia2 == -3) { return 1; }
-    if (empty_tiles == 0) { return -1; }
+    if (dia1 == 3 || dia2 == 3) { return 1; }
+    if (dia1 == -3 || dia2 == -3) { return 2; }
+    if (empty_tiles == 0) { return 3; } // tie
     return 0;
 }

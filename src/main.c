@@ -66,9 +66,20 @@ int main(void) {
             ClearBackground(WHITE);
             if (victory) { // game ended
                 new_board(&board);
-                char *victory_text = "Tie.";
-                if (victory == 1) {
-                    victory_text = is_x ? "Player Two Victory!" : "Player One Victory!";
+                char *victory_text;
+                switch (victory) {
+                case 1:
+                    victory_text = "Player One Victory!";
+                    break;
+                case 2:
+                    victory_text = "Player Two Victory!";
+                    break;
+                case 3:
+                    victory_text = "Tie.";
+                    break;
+                default:
+                    victory_text = "What";
+                    break;
                 }
                 DrawText(victory_text,
                         (screen_width - MeasureTextEx(GetFontDefault(), victory_text, 42, 4).x) / 2,
