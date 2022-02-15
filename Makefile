@@ -13,12 +13,20 @@ APP_NAME = Tic-Tac-Toe
 
 all: Tic-Tac-Toe.app
 
-Tic-Tac-Toe-macOS:
+bin:
 				[ ! -d "./bin/" ] && mkdir bin
-				$(CC) $(MACOS_FRAMEWORKS) $(CLIBSTAT) $(CFILES) -o $(BIN)-macOS
 
-Tic-Tac-Toe.app: Tic-Tac-Toe-macOS
+Tic-Tac-Toe_macOS: bin
+				$(CC) $(MACOS_FRAMEWORKS) $(CLIBSTAT) $(CFILES) -o $(BIN)_macOS
+
+Tic-Tac-Toe.app: Tic-Tac-Toe_macOS
 				mint run createapp -m json
+
+
+# Platforms
+# macOS
+macos-app: Tic-Tac-Toe.app
+macos-bin: Tic-Tac-Toe_macOS
 
 clean:
 				rm -r ./bin Tic-Tac-Toe.app
