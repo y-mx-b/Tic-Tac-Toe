@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include "game.h"
+#include "draw.h"
 
 typedef struct {
     int x;
@@ -17,6 +19,10 @@ void draw_grid(int screen_width, int screen_height) {
     DrawRectangleRounded((Rectangle){ screen_width/40, 2*screen_height/3 - 3, screen_width - (screen_width/20), 6 }, 1.0f, 10, BLACK);
 }
 
+void resize_image(Image *img, int screen_width, int screen_height) {
+    ImageResize(img, screen_width/3 - (screen_width / 20), screen_height/3 - (screen_height / 20));
+}
+
 Rectangle get_cell(int screen_width, int screen_height, Vector2 coord) {
     Rectangle cell;
     cell.height = (screen_height/3) - (screen_height/20);
@@ -25,10 +31,6 @@ Rectangle get_cell(int screen_width, int screen_height, Vector2 coord) {
     cell.y = coord.y * (screen_height/3) + (screen_width/40);
 
     return cell;
-}
-
-void resize_image(Image *img, int screen_width, int screen_height) {
-    ImageResize(img, screen_width/3 - (screen_width / 20), screen_height/3 - (screen_height / 20));
 }
 
 Point get_coord(int screen_width, int screen_height) {
