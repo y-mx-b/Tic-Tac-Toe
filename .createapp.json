@@ -3,5 +3,6 @@
   "name": "Tic-Tac-Toe",
   "executable": "./bin/Tic-Tac-Toe_macOS",
   "icon": "./assets/Tic-Tac-Toe.icns",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "assets": ["./assets/x.png", "./assets/o.png"]
 }

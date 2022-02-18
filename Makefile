@@ -24,7 +24,6 @@ Tic-Tac-Toe_macOS: bin
 Tic-Tac-Toe.app: bin
 				$(CC) $(MACOS_FRAMEWORKS) $(CLIBSTAT) $(CFILES) -o $(BIN)_macOS -DMACOS_APP=TRUE
 				mint run createapp -m json
-				cp assets/* Tic-Tac-Toe.app/Contents/Resources/
 
 
 # Platforms
