@@ -26,3 +26,4 @@ Note: target `macos-app` requires [`createapp`](https://github.com/y-mx-b/create
 - [ ] Custom drawn O/X's / embed png's into the binary?
 - [ ] New game menu
 - [ ] Sound effects + music
+- [ ] 1-player & 2-player modes
